@@ -1,14 +1,32 @@
 .title {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: block;
+    padding-bottom: 2%;
     margin-left: 33%;
     margin-right: 33%;
-    padding-top: 4%;
-    padding-bottom: 2%;
+    font-size: 4vw;
 }
 
 .body {
     /*background-color: rgb(0, 107, 173);*/
-    background-color: rgb(27, 154, 233);
+    background-color: rgb(0, 95, 155);
     color: rgb(235, 235, 235);
+    margin-top: 5%;
+}
+
+.myCustomModal {
+    margin-top: 33%;
+    color: rgb(49, 49, 49);
+}
+
+.result, .title {
+    border-radius: 3px;
+    text-align: center; 
+}
+
+.result {
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(211, 255, 211);
+    font-size: 5vw;
 }
