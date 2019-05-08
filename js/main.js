@@ -1,10 +1,15 @@
 
+'use strict';
+
 function openToBinaryModal() {
     $('#toBinaryModal').modal('show');
+    document.getElementById('binaryModal').style.display = 'unset';
     document.getElementById('toBinModalInput').value = 0;
 }
 
-function convertToDenary() {
+function openToDenaryModal() {
+    $('#toBinaryModal').modal('show');
+    document.getElementById('toBinModalInput').value = 0;
 }
 
 function main() {
@@ -50,4 +55,9 @@ function convertToBinary() {
         binary = binary.reverse().join('');
         document.getElementById('toBinaryResult').innerText = binary;
     }    
+}
+
+//hides all the inputs of the diff. modals
+function hideModalContents() {
+    document.getElementById('binaryModal').style.display = 'hidden';
 }

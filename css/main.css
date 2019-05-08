@@ -15,7 +15,7 @@
 }
 
 .myCustomModal {
-    margin-top: 33%;
+    margin-top: 20%;
     color: rgb(49, 49, 49);
 }
 
@@ -25,8 +25,9 @@
 }
 
 .result {
+    margin-top: -14%;
     width: 80%;
     margin-left: 10%;
     background-color: rgb(211, 255, 211);
-    font-size: 5vw;
+    font-size: 4vw;
 }

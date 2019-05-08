@@ -29,18 +29,18 @@
             </div>
 
             <div class="col-md-4 text-center" style="margin-top: 3%">
-                <button class="btn btn-light" onclick="convertToDenary()">Convert to Denary</button>
+                <button class="btn btn-light" onclick="openToDenaryModal()">Convert to Denary</button>
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
 
-    <!--Convert to binary Modal -->
+    <!--Convert to  Modal -->
     <div class="modal fade myCustomModal" id="toBinaryModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="toBinaryModalTitle">Convert to binary</h5>
+                    <h5 class="modal-title" id="toBinaryModalTitle">Convert it</h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -48,21 +48,23 @@
                 </div>
                 <div class="modal-body">
 
+                    <!-- BINARY modal -->
+                    <div id="binaryModal" style="display: none">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Paste your number here</span>
                             </div>
-                            <input onkeyup="convertToBinary()" id="toBinModalInput" class="form-control" type="number" aria-label="Paste your number here"></textarea>
+                            <input onkeyup="convertToBinary()" id="toBinModalInput" class="form-control" type="number">
                         </div>
-
 
                         <span class="result">
                             <h3 class="result" id="toBinaryResult"></h3>
                         </span>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="hideModalContents()" data-dismiss="modal">Close</button>
                 </div>
           </div>
         </div>
