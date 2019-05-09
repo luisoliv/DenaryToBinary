@@ -72,10 +72,16 @@ function convertToBinary() {
 
 function convertToDenary() {
     let binary = validateInput(true, document.getElementById('modalInputToDen').value);
-    console.log('the binary input gives', binary, typeof(binary));
-    if(binary) {
+    let result = 0;
+
+    console.log(binary, typeof(binary))
+    if(binary !== null) {
         binary = binary.toString();
-        document.getElementById('results').innerText = binary;
+        for(var i = 0; i < binary.length; i++) {
+            if(binary[i] === '1') 
+                result += Math.pow(2, i);
+        }
+        document.getElementById('results').innerText = result.toString();
     }    
 }
 
