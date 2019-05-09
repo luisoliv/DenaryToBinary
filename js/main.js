@@ -18,7 +18,7 @@ function openToDenaryModal() {
 }
 
 function main() {
-    console.log('Page loaded');
+    console.log('DOM loaded');
     if($()) {
         console.log('JQuery was loaded')
     } else {
@@ -35,23 +35,11 @@ function validateInput(isBin, modalValue) {
         }
     } else if (!isBin) {
         if(!modalValue) {
-            //modified because i do not use it anymore
-            // swal({
-            //     title: "Wrong type!",
-            //     text: "it must be a number!",
-            //     icon: "warning",
-            //     button: "Understood",
-            //   }).then(function (value) {
-            //       $('#modalInputToBin').val(0);
-            //   });
-    
-            //   $('#modalInputToBin').val(0);
             return null;
         } else {
             return Number(modalValue);
         }
     }
-    
 }
 
 function convertToBinary() {
@@ -63,26 +51,36 @@ function convertToBinary() {
         do {
             binary.push(parseInt(denary % 2) );
             denary = parseInt(denary / 2);
-        }while(denary > 0);
+        } while(denary > 0);
         
         binary = binary.reverse().join('');
         document.getElementById('results').innerText = binary;
     }    
 }
 
+function isBinary(number) {
+    for(var i in number) {
+        if(number[i] !== '0' && number[i] !== '1')
+            return false;
+    }
+
+    return true;
+}
+
 function convertToDenary() {
     let binary = validateInput(true, document.getElementById('modalInputToDen').value);
-    let result = 0;
-
-    console.log(binary, typeof(binary))
-    if(binary !== null) {
+  
+    if(binary === null)
+        return false;
+    else {
         binary = binary.toString();
-        for(var i = 0; i < binary.length; i++) {
-            if(binary[i] === '1') 
-                result += Math.pow(2, i);
-        }
-        document.getElementById('results').innerText = result.toString();
-    }    
+        if(isBinary(binary) ) {
+            document.getElementById('results').innerText = parseInt(binary, 2);
+            return true;
+        }    
+
+        return false;
+    }
 }
 
 //hides all the inputs of the diff. modals
