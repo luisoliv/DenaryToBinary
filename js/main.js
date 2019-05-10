@@ -7,13 +7,25 @@
 
 function openToBinaryModal() {
     hideModalContents();
-    document.getElementById('modalInputToBin').style.display = 'unset';
+    $('#modalWorkspace').load('./views/toBinary.html');
     $('#toBinaryModal').modal('show');
 }
 
 function openToDenaryModal() {
     hideModalContents();
-    document.getElementById('modalInputToDen').style.display = 'unset';
+    $('#modalWorkspace').load('./views/toDenary.html');
+    $('#toBinaryModal').modal('show');
+}
+
+function openToBase64Modal() {
+    hideModalContents();
+    $('#modalWorkspace').load('./views/base64.html');
+    $('#toBinaryModal').modal('show');
+}
+
+function openToBase10Modal() {
+    hideModalContents();
+    $('#modalWorkspace').load('./views/base10.html');
     $('#toBinaryModal').modal('show');
 }
 
@@ -54,7 +66,7 @@ function convertToBinary() {
         } while(denary > 0);
         
         binary = binary.reverse().join('');
-        document.getElementById('results').innerText = binary;
+        document.getElementById('results').value = binary;
     }    
 }
 
@@ -75,7 +87,7 @@ function convertToDenary() {
     else {
         binary = binary.toString();
         if(isBinary(binary) ) {
-            document.getElementById('results').innerText = parseInt(binary, 2);
+            document.getElementById('results').value = parseInt(binary, 2);
             return true;
         }    
 
@@ -83,11 +95,29 @@ function convertToDenary() {
     }
 }
 
+function convertToBase64() {
+    let text = document.getElementById('modalInputToBase64').value;
+
+    if(text) {
+        document.getElementById('results').value = btoaUTF16(text);
+    }
+}
+
+function convertToBase10() {
+    let text = document.getElementById('modalInputToBase10').value;
+
+    if(text) {
+        document.getElementById('results').value = atobUTF16(text);
+    }
+}
+
+function copyToClipboard() {
+    document.getElementById('results').select();
+    document.execCommand('copy');
+}
+
 //hides all the inputs of the diff. modals
 function hideModalContents() {
-    document.getElementById('modalInputToBin').style.display = 'none';
-    document.getElementById('modalInputToDen').style.display = 'none';
-    document.getElementById('modalInputToBin').value = null;
-    document.getElementById('modalInputToDen').value = null;
-    document.getElementById('results').innerText = '';
+    $('#modalWorkspace').empty();
+    document.getElementById('results').value = '';
 }
