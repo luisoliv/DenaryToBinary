@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Denary-Binary converter</title>
+    <title>Convert it!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
@@ -16,35 +16,71 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="title">...To what do you want to convert?</h1>
+                <h1 class="title">JUST convert it!</h1>
             </div>
         </div>
     </div>
-    <hr>
+    <hr style="background-color:rgb(141, 141, 141)">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-4 text-center" style="margin-top: 3%">
-                <button class="btn btn-success" onclick="openToBinaryModal()">Convert to Binary</button>
+            <div class="col-md-4 text-center">
+                <!-- <button class="btn btn-success" onclick="openToBinaryModal()">Convert to Binary</button> -->
+                <div class="tile tile-gray" onclick="openToBinaryModal()">
+                    1234 -> <b>Convert to Binary</b> -> 10101
+                </div>
             </div>
 
-            <div class="col-md-4 text-center" style="margin-top: 3%">
-                <button class="btn btn-light" onclick="openToDenaryModal()">Convert to Denary</button>
+            <div class="col-md-4 text-center">
+                <!-- <button class="btn btn-light" onclick="openToDenaryModal()">Convert to Denary</button> -->
+                <div class="tile tile-red" onclick="openToDenaryModal()">
+                    10101 -> <b>Convert to Denary</b> -> 1234
+                </div>
             </div>
             <div class="col-md-2"></div>
         </div>
 
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-4 text-center" style="margin-top: 3%">
-                <button class="btn btn-light" onclick="openToBase64Modal()">Convert to Base64</button>
+            <div class="col-md-4 text-center">
+                <!-- <button class="btn btn-light" onclick="openToBase64Modal()">Convert to Base64</button> -->
+                <div class="tile tile-red" onclick="openToBase64Modal()">
+                    Encode text in <b>Base64</b>
+                </div>
             </div>
 
-            <div class="col-md-4 text-center" style="margin-top: 3%">
-                <button class="btn btn-success" onclick="openToBase10Modal()">Convert to Base10</button>
+            <div class="col-md-4 text-center">
+                <!-- <button class="btn btn-success" onclick="openToBase10Modal()">Convert to Base10</button> -->
+                <div class="tile tile-gray" onclick="openToBase10Modal()">
+                    Decode Base64 into <b>text</b>
+                </div>
             </div>
             <div class="col-md-2"></div>
         </div>
+        <!-- <div class="row">
+            <div class="col-sm-6">
+                <div class="tile tile-red">
+                    TILE 1
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="tile tile-gray">
+                    TILE 2
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-sm-2">
+                <div class="tile tile-red">
+                        TILE 1
+                    </div>
+           </div>
+           <div class="col-sm-10">
+                <div class="tile tile-gray">
+                        TILE 2
+                    </div>
+           </div>
+        </div> -->
     </div>
 
     <!--Convert to  Modal -->
